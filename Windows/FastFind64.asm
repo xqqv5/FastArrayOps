@@ -74,15 +74,15 @@ CASE_4:
  mov         rax,r10
  ret
 CASE_3:
- cmp         r8d,dword ptr [rcx]
+ cmp         r8,qword ptr [rcx]
  je          FOUND_SMALL_SCALAR
  inc         eax
 CASE_2:
- cmp         r8d,dword ptr [rcx+8*rax]
+ cmp         r8,qword ptr [rcx+8*rax]
  je          FOUND_SMALL_SCALAR
  inc         eax
 CASE_1:
- cmp         r8d,dword ptr [rcx+8*rax]
+ cmp         r8,qword ptr [rcx+8*rax]
  je          FOUND_SMALL_SCALAR
 CASE_0:
  mov         rax,r10

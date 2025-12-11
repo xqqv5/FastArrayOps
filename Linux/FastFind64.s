@@ -7,7 +7,10 @@
 ; *    Last updated Mar 12, 2021
 ; *******************************************************************/
 
-bits 64section .textalign 64global FastFind64
+bits 64
+section .text
+align 64
+global FastFind64
 
 FastFind64:
  vmovq       xmm0,rdx
@@ -74,15 +77,15 @@ CASE_4:
  mov         rax,r10
  ret
 CASE_3:
- cmp         edx,dword [rdi]
+ cmp         rdx,qword [rdi]
  je          FOUND_SMALL_SCALAR
  inc         eax
 CASE_2:
- cmp         edx,dword [rdi+8*rax]
+ cmp         rdx,qword [rdi+8*rax]
  je          FOUND_SMALL_SCALAR
  inc         eax
 CASE_1:
- cmp         edx,dword [rdi+8*rax]
+ cmp         rdx,qword [rdi+8*rax]
  je          FOUND_SMALL_SCALAR
 CASE_0:
  mov         rax,r10

@@ -457,7 +457,7 @@ INNER_LOOP_END:
  vpblendvb   ymm5,ymm5,ymm6,ymm1
 
  vmovd       xmm6,r9d
- vpbroadcastd ymm6,xmm6
+ vpbroadcastw ymm6,xmm6
  vpunpcklwd  ymm5,ymm5,ymm6
 
  vpmaxsw     ymm14,ymm0,ymm14

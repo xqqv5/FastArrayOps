@@ -429,8 +429,8 @@ OUTER_LOOP_TOP:
  ; 16-bit outer best indices
  vpxor       xmm12,xmm12,xmm12
 
- ; 8-bit outer best value (127)
- vpaddb      ymm8,ymm13,ymm9
+ ; 8-bit outer best value (0xFF)
+ vpcmpeqd    ymm8,ymm8,ymm8
 
  lea         r8,[rdi+010000h]
  cmp         r8,rsi
